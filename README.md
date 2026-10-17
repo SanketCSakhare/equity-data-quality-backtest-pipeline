@@ -61,7 +61,7 @@ The loader and dbt profile use browser SSO (`externalbrowser`) and do not store 
 
 The [published dashboard](https://public.tableau.com/app/profile/sanket.chandrashekhar.sakhare/viz/EquityDataQualityandBacktestPipeline/Equitydashboard) uses a single [summary CSV](dashboard/tableau_public_data.csv): monthly normalized adjusted price indices, grouped quality flags, and backtest wealth and metrics. Run `python src/export_tableau.py` after the pipeline to refresh the CSV; Tableau Public file uploads need a manual data refresh. The CSV omits vendor daily OHLC rows. [The screenshot](dashboard/tableau_screenshot.png) shows the live published workbook.
 
-The [Power BI page specification](powerbi/README.md) remains as an optional alternative.
+The [Power BI page specification](powerbi/README.md) remains as an optional local Desktop build. Power BI Desktop is free, but publishing to the Power BI service requires a work or school account; a personal email cannot sign up directly. The Tableau Public dashboard above is the published version for this project.
 
 ## Findings from the verified local run
 
