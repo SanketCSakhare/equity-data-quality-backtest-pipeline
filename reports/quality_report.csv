@@ -1,0 +1,4 @@
+issue_type,issue_count,affected_tickers
+adjusted_jump_gt_20pct,2,1
+missing_peer_day,10,8
+raw_jump_gt_20pct,2,1

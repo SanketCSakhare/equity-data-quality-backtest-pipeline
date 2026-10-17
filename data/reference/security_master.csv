@@ -1,0 +1,24 @@
+ticker,lse_tidm,company_name,isin,sector,currency,isin_valid_from,isin_valid_to,lse_url
+AZN.L,AZN,AstraZeneca PLC,GB0009895292,Health Care,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/AZN/astrazeneca-plc/company-page
+HSBA.L,HSBA,HSBC Holdings PLC,GB0005405286,Financials,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/HSBA/hsbc-holdings-plc/company-page
+SHEL.L,SHEL,Shell PLC,GB00BP6MXD84,Energy,GBX,2022-01-31,,https://www.londonstockexchange.com/stock/SHEL/shell-plc/company-page
+ULVR.L,ULVR,Unilever PLC,GB00B10RZP78,Consumer Staples,GBX,2021-01-01,2025-12-08,https://www.londonstockexchange.com/stock/ULVR/unilever-plc/company-page
+ULVR.L,ULVR,Unilever PLC,GB00BVZK7T90,Consumer Staples,GBX,2025-12-09,,https://www.londonstockexchange.com/stock/ULVR/unilever-plc/company-page
+BP.L,BP.,BP PLC,GB0007980591,Energy,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/BP./bp-p-l-c
+GSK.L,GSK,GSK PLC,GB0009252882,Health Care,GBX,2021-01-01,2022-07-17,https://www.londonstockexchange.com/stock/GSK/gsk-plc/company-page
+GSK.L,GSK,GSK PLC,GB00BN7SWP63,Health Care,GBX,2022-07-18,,https://www.londonstockexchange.com/stock/GSK/gsk-plc/company-page
+RIO.L,RIO,Rio Tinto PLC,GB0007188757,Materials,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/RIO/rio-tinto-plc/company-page
+BATS.L,BATS,British American Tobacco PLC,GB0002875804,Consumer Staples,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/BATS/british-american-tobacco-plc/company-page
+DGE.L,DGE,Diageo PLC,GB0002374006,Consumer Staples,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/DGE/diageo-plc/company-page
+REL.L,REL,RELX PLC,GB00B2B0DG97,Industrials,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/REL/relx-plc/company-page
+NG.L,NG.,National Grid PLC,GB00BDR05C01,Utilities,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/NG./national-grid-plc/company-page
+LLOY.L,LLOY,Lloyds Banking Group PLC,GB0008706128,Financials,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/LLOY/lloyds-banking-group-plc/company-page
+BARC.L,BARC,Barclays PLC,GB0031348658,Financials,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/BARC/barclays-plc/company-page
+VOD.L,VOD,Vodafone Group PLC,GB00BH4HKS39,Telecommunications,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/VOD/vodafone-group-plc/company-page
+TSCO.L,TSCO,Tesco PLC,GB00BLGZ9862,Consumer Staples,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/TSCO/tesco-plc/company-page
+PRU.L,PRU,Prudential PLC,GB0007099541,Financials,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/PRU/prudential-plc/company-page
+RR.L,RR.,Rolls-Royce Holdings PLC,GB00B63H8491,Industrials,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/RR./rolls-royce-holdings-plc/company-page
+LSEG.L,LSEG,London Stock Exchange Group PLC,GB00B0SWJX34,Financials,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/LSEG/london-stock-exchange-group-plc/company-page
+AAL.L,AAL,Anglo American PLC,GB00B1XZS820,Materials,GBX,2021-01-01,2025-06-01,https://www.londonstockexchange.com/stock/AAL/anglo-american-plc/company-page
+AAL.L,AAL,Anglo American PLC,GB00BTK05J60,Materials,GBX,2025-06-02,,https://www.londonstockexchange.com/stock/AAL/anglo-american-plc/company-page
+GLEN.L,GLEN,Glencore PLC,JE00B4T3BW64,Materials,GBX,2021-01-01,,https://www.londonstockexchange.com/stock/GLEN/glencore-plc/company-page

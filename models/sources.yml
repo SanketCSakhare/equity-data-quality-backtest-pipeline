@@ -1,0 +1,33 @@
+version: 2
+sources:
+  - name: raw
+    database: EQUITY_RESEARCH
+    schema: RAW
+    tables:
+      - name: prices
+        identifier: PRICES
+      - name: corporate_actions
+        identifier: CORPORATE_ACTIONS
+      - name: security_master
+        identifier: SECURITY_MASTER
+      - name: quality_issues
+        identifier: QUALITY_ISSUES
+models:
+  - name: dim_security
+    columns:
+      - name: ticker
+        tests: [not_null]
+      - name: isin
+        tests: [not_null]
+  - name: fct_prices
+    columns:
+      - name: trade_date
+        tests: [not_null]
+      - name: ticker
+        tests: [not_null]
+      - name: close
+        tests: [not_null]
+  - name: fct_corporate_actions
+    columns:
+      - name: ticker
+        tests: [not_null]

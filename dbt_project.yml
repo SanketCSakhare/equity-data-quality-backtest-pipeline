@@ -1,0 +1,8 @@
+name: equity_quality
+version: '1.0.0'
+config-version: 2
+profile: equity_quality
+model-paths: ["models"]
+models:
+  equity_quality:
+    +materialized: view
