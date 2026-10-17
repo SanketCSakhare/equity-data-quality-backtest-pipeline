@@ -9,7 +9,7 @@ A compact research pipeline for 20 London-listed large-cap equities. It combines
 ## What it does
 
 1. Pulls daily OHLCV, `Adj Close`, dividends and split ratios from Yahoo Finance through [`yfinance`](https://ranaroussi.github.io/yfinance/reference/yfinance.price_history.html). The `end` date is exclusive.
-2. Joins each date to a [security master](data/reference/security_master.csv) with company, ticker, LSE TIDM, ISIN, sector and GBX quote currency. ISINs are checked against [London Stock Exchange instrument pages](https://www.londonstockexchange.com/) linked in each row. GSK, Anglo American and Unilever have dated identifier changes.
+2. Joins each date to a [security master](data/reference/security_master.csv) with company, ticker, LSE TIDM, ISIN, broad analyst-assigned sector and GBX quote currency. ISINs are checked against [London Stock Exchange instrument pages](https://www.londonstockexchange.com/) linked in each row. GSK, Anglo American and Unilever have dated identifier changes.
 3. Keeps `Close` (Yahoo's split-adjusted, cash-dividend-unadjusted series), `Adj Close` (Yahoo's dividend-and-split-adjusted series), and an illustrative reconstructed `pre_split_nominal_close`. Corporate actions remain explicit events.
 4. Flags missing peer-calendar dates, duplicate ticker/date rows, null or nonpositive prices, and raw/adjusted daily moves above 20%. It writes event-level and grouped quality tables.
 5. Exports CSVs for a Snowflake raw layer, with dbt security, price, event and quality models plus example SQL.
@@ -69,11 +69,10 @@ Across 48 monthly holding periods, top-five momentum returned **155.57% total** 
 ## Method limits
 
 - This is a fixed set of current stocks, so the comparison has survivorship bias and is not a historical FTSE 100 constituent backtest.
-- `SHEL.L` begins on 31 January 2022; the current Shell line does not span the full window. GSK and Unilever changed ISIN within the window.
+- `SHEL.L` begins on 31 January 2022; the current Shell line does not span the full window. GSK, Anglo American and Unilever changed ISIN within the window.
 - A peer-union calendar is a screening proxy, not an official LSE session calendar. Missing-day flags need review before data repair.
 - Vendor-adjusted prices and corporate actions can be restated. The pipeline does not independently reconstruct total return from raw transactions.
 - No transaction costs, slippage, taxes, market impact or currency conversion are included. The prices are in GBX.
 - The Snowflake and native Power BI components are supplied as code and a page specification pending account access; no claim of a completed live load or `.pbix` is made.
 
 This project is for technical demonstration and research, not investment advice.
-
