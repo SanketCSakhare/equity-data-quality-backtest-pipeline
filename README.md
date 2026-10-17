@@ -2,9 +2,9 @@
 
 A compact research pipeline for 20 London-listed large-cap equities. It combines daily prices, point-in-time identifiers, corporate actions, quality checks, Snowflake/dbt models, and a 12-month momentum backtest. The latest verified local run covers **18 October 2021–16 October 2026**.
 
-![One-page dashboard preview](dashboard/preview.png)
+![Published Tableau Public dashboard](dashboard/tableau_screenshot.png)
 
-*This is a static preview generated from the pipeline outputs. The [Power BI page specification](powerbi/README.md) describes the native report; a `.pbix` has not been saved because Power BI access was not available in this run.*
+*The [live Tableau Public dashboard](https://public.tableau.com/app/profile/sanket.chandrashekhar.sakhare/viz/EquityDataQualityandBacktestPipeline/Equitydashboard) contains the four views shown above. The [build guide](dashboard/TABLEAU.md) and [summary data](dashboard/tableau_public_data.csv) make it reproducible.*
 
 ## What it does
 
@@ -25,6 +25,7 @@ python -m venv .venv
 pip install -r requirements.txt
 python src/equity_pipeline.py --start 2021-10-18 --end 2026-10-17
 python src/render_preview.py
+python src/export_tableau.py
 python -m unittest discover -s tests -v
 ```
 
@@ -56,9 +57,11 @@ dbt build --profiles-dir .
 
 The loader and dbt profile use browser SSO (`externalbrowser`) and do not store a password. The loader creates `EQUITY_RESEARCH.RAW` and stages the CSVs. dbt builds `EQUITY_RESEARCH.ANALYTICS`; [example_queries.sql](sql/example_queries.sql) checks coverage, flags, and event-price joins. The warehouse load and dbt commands have not been executed in a Snowflake account here.
 
-## Power BI
+## Tableau Public
 
-The [one-page layout and DAX measures](powerbi/README.md) use the generated CSVs. Power BI Desktop or a signed-in workspace is needed to save the native report. The checked-in image is a preview of the requested page, not a `.pbix` screenshot.
+The [published dashboard](https://public.tableau.com/app/profile/sanket.chandrashekhar.sakhare/viz/EquityDataQualityandBacktestPipeline/Equitydashboard) uses a single [summary CSV](dashboard/tableau_public_data.csv): monthly normalized adjusted price indices, grouped quality flags, and backtest wealth and metrics. Run `python src/export_tableau.py` after the pipeline to refresh the CSV; Tableau Public file uploads need a manual data refresh. The CSV omits vendor daily OHLC rows. [The screenshot](dashboard/tableau_screenshot.png) shows the live published workbook.
+
+The [Power BI page specification](powerbi/README.md) remains as an optional alternative.
 
 ## Findings from the verified local run
 
@@ -73,6 +76,7 @@ Across 48 monthly holding periods, top-five momentum returned **155.57% total** 
 - A peer-union calendar is a screening proxy, not an official LSE session calendar. Missing-day flags need review before data repair.
 - Vendor-adjusted prices and corporate actions can be restated. The pipeline does not independently reconstruct total return from raw transactions.
 - No transaction costs, slippage, taxes, market impact or currency conversion are included. The prices are in GBX.
-- The Snowflake and native Power BI components are supplied as code and a page specification pending account access; no claim of a completed live load or `.pbix` is made.
+- The Snowflake load is supplied as code pending account access; no claim of a completed live warehouse load is made.
 
 This project is for technical demonstration and research, not investment advice.
+
